@@ -1,0 +1,7 @@
+<form novalidate #studentForm="ngForm">
+    Id <input type="text" name="id" #idCtrl="ngModel" required [(ngModel)]="s1.id"><br>
+    Name <input type="text" name="name" #nameCtrl="ngModel" minlength="5" [(ngModel)]="s1.name">
+    <span *ngIf="nameCtrl.invalid">please provide min 5 charecters</span><br>
+    Email <input type="email" name="email" [(ngModel)]="s1.email"><br>
+    <button (click)="save();" [disabled]="studentForm.invalid">Save</button>
+</form>
